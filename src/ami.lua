@@ -1,5 +1,5 @@
 return {
-    title = "Gobyte Node",
+    title = "Pepegold Node",
     commands = {
         info = {
             description = "ami 'info' sub command",
@@ -36,24 +36,24 @@ return {
 
                     am.execute_extension("__btc/configure.lua", { contextFailExitCode = EXIT_APP_CONFIGURE_ERROR })
                 end
-                log_success("Gobyte node setup complete.")
+                log_success("Pepegold node setup complete.")
             end
         },
         bootstrap = {
             description = "ami 'bootstrap' sub command",
-            summary = "Bootstraps the Gobyte node",
-            action = "__gbx/bootstrap.lua",
+            summary = "Bootstraps the Pepegold node",
+            action = "__pepegold/bootstrap.lua",
             contextFailExitCode = EXIT_APP_INTERNAL_ERROR
         },
         start = {
             description = "ami 'start' sub command",
-            summary = "Starts the Gobyte node",
+            summary = "Starts the Pepegold node",
             action = "__btc/start.lua",
             contextFailExitCode = EXIT_APP_START_ERROR
         },
         stop = {
             description = "ami 'stop' sub command",
-            summary = "Stops the Gobyte node",
+            summary = "Stops the Pepegold node",
             action = "__btc/stop.lua",
             contextFailExitCode = EXIT_APP_STOP_ERROR
         },
@@ -63,8 +63,8 @@ return {
             action = function(_options, command, args, cli)
                 -- //TODO: Validate platform
                 -- //TODO: add switches
-                ami_assert(proc.EPROC, "Gobyte node AMI requires extra api - eli.proc.extra", EXIT_MISSING_API)
-                ami_assert(fs.EFS, "Gobyte node AMI requires extra api - eli.fs.extra", EXIT_MISSING_API)
+                ami_assert(proc.EPROC, "Pepegold node AMI requires extra api - eli.proc.extra", EXIT_MISSING_API)
+                ami_assert(fs.EFS, "Pepegold node AMI requires extra api - eli.fs.extra", EXIT_MISSING_API)
 
                 ami_assert(type(am.app.get("id")) == "string", "id not specified!", EXIT_INVALID_CONFIGURATION)
                 ami_assert(
@@ -78,7 +78,7 @@ return {
                     "Invalid app type!",
                     EXIT_INVALID_CONFIGURATION
                 )
-                log_success("Gobyte node configuration validated.")
+                log_success("Pepegold node configuration validated.")
             end
         },
         about = {
